@@ -5,8 +5,8 @@ function encode(word, n) {
     };
     var i = 0;
     var direction = 1;
-    var tmp_arr = word.split('');
-    tmp_arr.forEach(function(letter){
+    var tmpArr = word.split('');
+    tmpArr.forEach(function(letter){
         result[i].push(letter)
         if (i === 0) {
             direction = 1;

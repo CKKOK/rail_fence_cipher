@@ -20,3 +20,24 @@ function encode(word, n) {
     };
     return result.join('')
 }
+
+
+function decode(word, n) {
+    var result = [];
+    var l = word.length;
+    var cycleLength = 2*n - 2;
+    var firstRowLength = Math.ceil(l/cycleLength);
+    var middleRowLength = Math.floor(l/cycleLength) * 2;
+    var bottomRowLength = Math.floor(l/cycleLength);
+    var initialInterval = 2*n - 3;
+    var rows = [];
+    rows[0] = word.substr(0, firstRowLength);
+    var j = 1;
+    for (var i = firstRowLength; i < l; i += middleRowLength) {
+        rows[j] = word.substr(i, middleRowLength);
+        j++;
+    };
+    // Insert zig-zag logic here
+};
+
+decode('WECRLTEERDSOEEFEAOCAIVDEN', 3)
